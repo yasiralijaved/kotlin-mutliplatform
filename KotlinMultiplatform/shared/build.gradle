@@ -1,5 +1,7 @@
-apply plugin: 'kotlin-multiplatform'
-apply plugin: 'kotlinx-serialization'
+plugins {
+    id 'kotlin-multiplatform'
+    id 'kotlinx-serialization'
+}
 
 kotlin {
 
@@ -43,7 +45,7 @@ kotlin {
         }
 
         iOSMain.dependencies {
-            //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
+            implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
 
             implementation "io.ktor:ktor-client-ios:$ktor_version"
             implementation "io.ktor:ktor-client-core-native:$ktor_version"

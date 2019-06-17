@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         label.font = label.font.withSize(25)
         label.text = CommonKt.createApplicationScreenMessage()
-        ApplicationApi().users { (a: String) -> KotlinUnit in
-            print(a)
+        ApplicationApi().users { (a: [User]) -> KotlinUnit in
+            print(a[0].name)
             return .init()
         }
         view.addSubview(label)

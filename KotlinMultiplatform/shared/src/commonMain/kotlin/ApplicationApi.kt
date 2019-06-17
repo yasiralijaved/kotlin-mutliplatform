@@ -1,25 +1,28 @@
 package com.yasiralijaved.kotlinmultiplatform.shared
 
+import com.yasiralijaved.kotlinmultiplatform.shared.models.User
+import io.ktor.client.HttpClient
+import io.ktor.client.request.get
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-
-import io.ktor.client.*
-import io.ktor.client.request.*
-
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.list
 
 
 internal expect val ApplicationDispatcher: CoroutineDispatcher
 
+@UseExperimental(kotlinx.serialization.ImplicitReflectionSerializer::class)
 class ApplicationApi {
+
     private val client = HttpClient {}
 
-    fun users(callback: (String) -> Unit) {
+    fun users(callback: (List<User>) -> Unit) {
         GlobalScope.apply {
             launch(ApplicationDispatcher) {
                 val result: String = client.get("https://jsonplaceholder.typicode.com/users")
-
-                callback(result)
+                val userList = Json.parse(User.serializer().list, result)
+                callback(userList)
             }
         }
     }
