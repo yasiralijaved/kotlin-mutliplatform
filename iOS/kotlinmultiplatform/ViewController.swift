@@ -9,24 +9,40 @@
 import UIKit
 import KotlinShared
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var usersCollectionView: UICollectionView!
+    
+    var usersList = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
-        label.font = label.font.withSize(25)
-        label.text = CommonKt.createApplicationScreenMessage()
-        ApplicationApi().users { (a: [User]) -> KotlinUnit in
-            print(a[0].name)
+        ApplicationApi().users { (users: [User]) -> KotlinUnit in
+            print(users[0].name)
+            self.usersList = users
+            for user in users {
+                // make copies of user objects to increase the scrolling
+                self.usersList.append(user)
+            }
+            self.usersCollectionView.reloadData()
             return .init()
         }
-        view.addSubview(label)
     }
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return usersList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        cell.nameLabel.text = usersList[indexPath.item].name
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
 
 }
 

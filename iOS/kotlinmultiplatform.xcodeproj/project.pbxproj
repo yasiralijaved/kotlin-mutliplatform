@@ -14,6 +14,7 @@
 		C7159FCD22B55E1500C16C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7159FCB22B55E1500C16C78 /* LaunchScreen.storyboard */; };
 		C7159FD522B5654200C16C78 /* KotlinShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7159FD422B5654200C16C78 /* KotlinShared.framework */; };
 		C7159FD622B5654200C16C78 /* KotlinShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7159FD422B5654200C16C78 /* KotlinShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C720FE4522B7BE6E0051E09C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720FE4422B7BE6E0051E09C /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		C7159FCC22B55E1500C16C78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7159FCE22B55E1500C16C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7159FD422B5654200C16C78 /* KotlinShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KotlinShared.framework; path = "../../KotlinMultiplatform/shared/build/xcode-frameworks/KotlinShared.framework"; sourceTree = "<group>"; };
+		C720FE4422B7BE6E0051E09C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				C7159FC222B55E1300C16C78 /* AppDelegate.swift */,
 				C7159FC422B55E1300C16C78 /* ViewController.swift */,
+				C720FE4422B7BE6E0051E09C /* CollectionViewCell.swift */,
 				C7159FC622B55E1300C16C78 /* Main.storyboard */,
 				C7159FC922B55E1500C16C78 /* Assets.xcassets */,
 				C7159FCB22B55E1500C16C78 /* LaunchScreen.storyboard */,
@@ -178,6 +181,7 @@
 			files = (
 				C7159FC522B55E1300C16C78 /* ViewController.swift in Sources */,
 				C7159FC322B55E1300C16C78 /* AppDelegate.swift in Sources */,
+				C720FE4522B7BE6E0051E09C /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
