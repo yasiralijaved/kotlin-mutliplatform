@@ -22,13 +22,21 @@ With this approach, the native platforms (Android and iOS) are only responsible 
 1. kotlinx-coroutines that is mandatory for Ktor
 1. mikepenz/FastAdapter [Android] to easily display the list of Users on the UI
 
-# Users List Screen
+## Users List Screen
 <image src="images/home-screen.png" />
 
 
 
 
-#### Whats included in this sample project?
+### Whats included in this sample project?
 The common project fetches the list of users asynchronously (in a kotlin coroutine) from a restful api and then pass the result to the observer.
 
 The observer in this sample are the consumers of the common(shared) project, i.e iOS and Android (UI) projects. These native projects are responsible to access the common class <b>ApplicationApi</b> and call its method <b>users()</b>. The iOS/Android projects observe the output of this method using Coroutine(Android) / Callback(iOS) and then display the results onto the UI.
+
+## Android/iOS Code Sippets
+Below are the code snippets that access the common code. The Android peoject uses <b>Kotlin coroutine</b> to access the common api for fetching the users list from restful api. The iOS project uses <b>callback in Swift</b>
+
+| | |
+|:-------------------------:|:-------------------------:|
+| Android Kotlin Coroutine | iOS Swift Callback |
+|<img width="1604" alt="kotlin multiplatform android sample code" src="images/android-code-1.png"> |  <img width="1604"  alt="kotlin multiplatform iOS sample code" src="images/ios-code-1.png"> |
