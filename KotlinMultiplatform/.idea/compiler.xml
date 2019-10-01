@@ -2,12 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="KotlinMultiplatform-shared_jvmMain" target="1.8" />
-      <module name="KotlinMultiplatform-shared_jvmTest" target="1.6" />
       <module name="shared_androidMain" target="1.6" />
       <module name="shared_androidTest" target="1.6" />
-      <module name="shared_jvmMain" target="1.6" />
-      <module name="shared_jvmTest" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

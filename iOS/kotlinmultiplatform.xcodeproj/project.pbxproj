@@ -12,9 +12,8 @@
 		C7159FC822B55E1300C16C78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7159FC622B55E1300C16C78 /* Main.storyboard */; };
 		C7159FCA22B55E1500C16C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7159FC922B55E1500C16C78 /* Assets.xcassets */; };
 		C7159FCD22B55E1500C16C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7159FCB22B55E1500C16C78 /* LaunchScreen.storyboard */; };
-		C7159FD522B5654200C16C78 /* KotlinShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7159FD422B5654200C16C78 /* KotlinShared.framework */; };
-		C7159FD622B5654200C16C78 /* KotlinShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7159FD422B5654200C16C78 /* KotlinShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C720FE4522B7BE6E0051E09C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720FE4422B7BE6E0051E09C /* CollectionViewCell.swift */; };
+		C763146D234348130086E565 /* KotlinShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C763146C234348130086E565 /* KotlinShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C7159FD622B5654200C16C78 /* KotlinShared.framework in Embed Frameworks */,
+				C763146D234348130086E565 /* KotlinShared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,8 +38,8 @@
 		C7159FC922B55E1500C16C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7159FCC22B55E1500C16C78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7159FCE22B55E1500C16C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7159FD422B5654200C16C78 /* KotlinShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KotlinShared.framework; path = "../../KotlinMultiplatform/shared/build/xcode-frameworks/KotlinShared.framework"; sourceTree = "<group>"; };
 		C720FE4422B7BE6E0051E09C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C763146C234348130086E565 /* KotlinShared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KotlinShared.framework; path = "../KotlinMultiplatform/shared/build/xcode-frameworks/KotlinShared.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7159FD522B5654200C16C78 /* KotlinShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +56,7 @@
 		C7159FB622B55E1300C16C78 = {
 			isa = PBXGroup;
 			children = (
-				C7159FD422B5654200C16C78 /* KotlinShared.framework */,
+				C763146C234348130086E565 /* KotlinShared.framework */,
 				C7159FC122B55E1300C16C78 /* kotlinmultiplatform */,
 				C7159FC022B55E1300C16C78 /* Products */,
 			);
@@ -170,7 +168,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/../../KotlinMultiplatform/shared/build/xcode-frameworks\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "cd \"$SRCROOT/../KotlinMultiplatform/shared/build/xcode-frameworks\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -329,7 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YUQT9F4229;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../KotlinMultiplatform/shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../KotlinMultiplatform/shared/build/xcode-frameworks";
 				INFOPLIST_FILE = kotlinmultiplatform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YUQT9F4229;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../KotlinMultiplatform/shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../KotlinMultiplatform/shared/build/xcode-frameworks";
 				INFOPLIST_FILE = kotlinmultiplatform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
